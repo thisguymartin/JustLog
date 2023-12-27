@@ -1,0 +1,5 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Logger > should add fields to logs 1`] = `"{"log":{"level":"info","fields":{"key":"value"},"message":"Info with field","timestamp":"2023-11-30T13:00:00.000Z"}}"`;
+
+exports[`Logger > should log info messages 1`] = `"{"log":{"level":"info","fields":{},"message":"Info message","timestamp":"2023-11-30T13:00:00.000Z"}}"`;

@@ -1,6 +1,8 @@
 {
   "name": "JustLog",
   "version": "1.0.0",
+  "type": "module",
+
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -9,9 +11,15 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.ts"
+    "build": "tsup src/index.ts",
+    "test:watch": "vitest run --watch",
+    "test": "vitest run --coverage"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@vitest/coverage-v8": "^1.1.0",
+    "vitest": "^1.1.0"
+  }
 }
