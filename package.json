@@ -19,9 +19,6 @@
     "check": "tsc --noEmit",
     "lint": "eslint src --ext .ts"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
