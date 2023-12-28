@@ -30,4 +30,4 @@ jobs:
       - run: pnpm install # Install dependencies using pnpm
       - run: pnpm publish # Publish using pnpm
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
