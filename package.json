@@ -1,6 +1,6 @@
 {
   "name": "@thisguymartin/barebone-logger",
-  "version": "1.0.25",
+  "version": "1.0.26",
   "repository": {
     "url": "git://github.com/thisguymartin/barebone-logger.git"
   },
@@ -12,6 +12,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@thisguymartin"
+  },
   "scripts": {
     "build": "tsc --noEmit && parcel build src/index.ts",
     "test:watch": "vitest run --watch",
