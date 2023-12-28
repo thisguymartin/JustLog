@@ -1,4 +1,5 @@
-# 🪵 JustLog
+# 🪵 barebone-logger
+
 
 Simple Node Logger is a lightweight and easy-to-use logging utility for Node.js applications. It provides a straightforward way to log messages at various levels (debug, info, warn, error, fatal) and supports adding custom fields to logs for more detailed information.
 
