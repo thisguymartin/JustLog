@@ -34,7 +34,7 @@ jobs:
         NODE_AUTH_TOKEN: ${{ secrets.BAREBONE_GITHUB_SECRET }}
     
     - name: Configure npm for publishing to npmjs.org
-      run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+      run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
     
     - name: Publish to npm
       run: npm publish
