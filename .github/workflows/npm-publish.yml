@@ -19,6 +19,12 @@ jobs:
     - uses: pnpm/action-setup@v2
       with:
         version: 8
+    - name: Create .npmrc
+     run: |
+        echo "@thisguymartin:registry=https://npm.pkg.github.com" > .npmrc
+        echo "//npm.pkg.github.com/:_authToken=${{ secrets.BAREBONE_GITHUB_SECRET }}" >> .npmrc
+        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+        
     - name: Install dependencies
       run: pnpm install
     
