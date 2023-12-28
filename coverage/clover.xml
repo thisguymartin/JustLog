@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1703720253512" clover="3.2.0">
-  <project timestamp="1703720253512" name="All files">
-    <metrics statements="206" coveredstatements="189" conditionals="35" coveredconditionals="32" methods="23" coveredmethods="22" elements="264" coveredelements="243" complexity="0" loc="206" ncloc="206" packages="1" files="1" classes="1"/>
-    <file name="index.ts" path="/Users/thisguymartin/personal-workspace/JustLog/src/index.ts">
+<coverage generated="1703783939544" clover="3.2.0">
+  <project timestamp="1703783939544" name="All files">
+    <metrics statements="208" coveredstatements="189" conditionals="36" coveredconditionals="32" methods="24" coveredmethods="22" elements="268" coveredelements="243" complexity="0" loc="208" ncloc="208" packages="1" files="2" classes="2"/>
+    <file name="index.ts" path="/Users/thisguymartin/personal-workspace/NodeSimpleLogger/src/index.ts">
+      <metrics statements="2" coveredstatements="0" conditionals="1" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <line num="1" count="0" type="cond" truecount="0" falsecount="1"/>
+      <line num="2" count="0" type="stmt"/>
+    </file>
+    <file name="logger.ts" path="/Users/thisguymartin/personal-workspace/NodeSimpleLogger/src/logger.ts">
       <metrics statements="206" coveredstatements="189" conditionals="35" coveredconditionals="32" methods="23" coveredmethods="22"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>

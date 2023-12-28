@@ -1,9 +1,10 @@
 import { describe, it, expect, vi, afterEach, beforeEach } from 'vitest';
-import { Logger } from '.'; // Replace with the actual path of your logger file
+import { LogInterface, Logger } from './logger'; // Replace with the actual path of your logger file
 
 describe('Logger', () => {
-  let logger;
-  let consoleSpy;
+  let logger: LogInterface;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  let consoleSpy: { log: any; warn: any; error: any; };
 
   const mockDate = new Date('2023-11-30T13:00:00.000Z')
   vi.useFakeTimers().setSystemTime(mockDate)
