@@ -24,7 +24,8 @@ jobs:
         echo "@thisguymartin:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com/:_authToken=${{ secrets.BAREBONE_GITHUB_SECRET }}" >> .npmrc
         echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-        
+        echo "registry=https://registry.npmjs.org/" >> .npmrc
+        echo "always-auth=true" >> .npmrc
     - name: Install dependencies
       run: pnpm install
     
