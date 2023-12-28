@@ -28,6 +28,6 @@ jobs:
         with:
           version: 8
       - run: pnpm install # Install dependencies using pnpm
-      - run: pnpm publish # Publish using pnpm
+      - run: pnpm -r publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
