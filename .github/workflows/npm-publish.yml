@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 16
-          cache: 'pnpm' # Enable caching for pnpm
-      - run: npm install -g pnpm # Install pnpm globally
+          version: 8
       - run: pnpm install # Equivalent to npm ci in pnpm
       - run: pnpm build # Equivalent to npm ci in pnpm
       - run: pnpm test
@@ -26,12 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-          registry-url: https://registry.npmjs.org/
-          cache: 'pnpm' # Enable caching for pnpm
-      - run: npm install -g pnpm # Install pnpm globally
+      - uses: pnpm/action-setup@v2
       - run: pnpm install # Install dependencies using pnpm
       - run: pnpm publish # Publish using pnpm
         env:
