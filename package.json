@@ -1,7 +1,9 @@
 {
-  "name": "barebone-logger",
+  "name": "@thisguymartin/barebone-logger",
   "version": "1.0.1",
-  "repository":"https://github.com/thisguymartin/barebone-logger",
+  "repository": {
+    "url": "git://github.com/thisguymartin/barebone-logger.git"
+  },
   "type": "module",
   "description": "",
   "main": "./dist/index.js",
