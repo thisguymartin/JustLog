@@ -1,6 +1,6 @@
 name: Build and Deploy
 
-on:
+on: 
   release:
     types: [created]
 jobs:
@@ -23,9 +23,7 @@ jobs:
       run: |
         echo "@thisguymartin:registry=https://npm.pkg.github.com" > .npmrc
         echo "//npm.pkg.github.com/:_authToken=${{ secrets.BAREBONE_GITHUB_SECRET }}" >> .npmrc
-        echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
-        echo "registry=https://registry.npmjs.org/" >> .npmrc
-        echo "always-auth=true" >> .npmrc
+ 
     - name: Install dependencies
       run: pnpm install
     
@@ -39,9 +37,3 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.BAREBONE_GITHUB_SECRET }}
-    
-    - name: Configure npm for publishing to npmjs.org
-      run: npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
-    
-    - name: Publish to npm
-      run: npm publish
