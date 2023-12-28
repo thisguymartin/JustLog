@@ -1,26 +1,40 @@
-name: Node.js Package with pnpm
+name: Build and Deploy
 
 on:
   release:
     types: [created]
-
 jobs:
-  build-and-publish:
+  build-and-deploy:
     runs-on: ubuntu-latest
+        
     steps:
-      - uses: actions/checkout@v3
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          registry-url: 'https://registry.npmjs.org'
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-      - run: pnpm install # Equivalent to npm ci in pnpm
-      - run: pnpm build # Equivalent to npm ci in pnpm
-      - run: pnpm test
-      - name: Publish to GitHub Packages
-        run: pnpm -r publish --no-git-checks --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - uses: actions/checkout@v2
+        
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@thisguymartin' 
+    - uses: pnpm/action-setup@v2
+      with:
+        version: 8
+    - name: Install dependencies
+      run: pnpm install
+    
+    - name: Run tests
+      run: pnpm test
+    
+    - name: Build
+      run: pnpm run build
+    
+    - name: Publish to GitHub Packages
+      run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.BAREBONE_GITHUB_SECRET }}
+    
+    - name: Configure npm for publishing to npmjs.org
+      run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+    
+    - name: Publish to npm
+      run: npm publish
