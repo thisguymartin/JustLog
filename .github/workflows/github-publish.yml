@@ -1,0 +1,30 @@
+name: Publish to GitHub Packages
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18' # or your Node.js version
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - run: pnpm install # Equivalent to npm ci in pnpm
+      - run: pnpm build # Equivalent to npm ci in pnpm
+      - run: pnpm test
+
+      - name: Build Package
+        run: npm run build # if you have a build script
+
+      - name: Publish to GitHub Packages
+        run:  pnpm -r publish --no-git-checks --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.BAREBONE_GITHUB_SECRET }}
+
