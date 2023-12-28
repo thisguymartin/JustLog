@@ -1,6 +1,7 @@
 {
   "name": "barebone-logger",
   "version": "1.0.1",
+  "repository":"https://github.com/thisguymartin/barebone-logger",
   "type": "module",
   "description": "",
   "main": "./dist/index.js",
@@ -15,6 +16,9 @@
     "test": "vitest run --coverage",
     "check": "tsc --noEmit",
     "lint": "eslint src --ext .ts"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "keywords": [],
   "author": "",
